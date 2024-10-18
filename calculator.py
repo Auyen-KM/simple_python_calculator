@@ -14,15 +14,18 @@ def get_operation():
             print("Ошибка: Введите корректную операцию.")
 
 def calculate(num1, num2, operation):
-    if operation == '+':
-        return num1 + num2
-    elif operation == '-':
-        return num1 - num2
-    elif operation == '*':
-        return num1 * num2
-    elif operation == '/':
-        return num1 / num2
-
+    try:
+        if operation == '+':
+            return num1 + num2
+        elif operation == '-':
+            return num1 - num2
+        elif operation == '*':
+            return num1 * num2
+        elif operation == '/':
+            return num1 / num2
+    except ZeroDivisionError:
+        print("Ошибка: Деление на ноль невозможно.")
+        return None
 
 def main():
     while True:
